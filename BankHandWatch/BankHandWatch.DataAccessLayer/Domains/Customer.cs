@@ -12,15 +12,9 @@ namespace BankHandWatch.DataAccessLayer.Domains
     {
         public string Password { get; set; }
 
-        public int WatchId { get; set; }
+        public virtual Watch Watch { get; set; }
 
-        [ForeignKey(nameof(WatchId))]
-        public Watch Watch { get; set; }
+        public virtual Account Account { get; set; }
 
-
-        public int AccountId { get; set; }
-
-        [ForeignKey(nameof(AccountId))]
-        public Account Account { get; set; }
     }
 }

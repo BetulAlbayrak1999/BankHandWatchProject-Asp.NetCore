@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BankHandWatch.DataAccessLayer.Domains
 {
-    public class Person: BaseEntityWithIdentity
+    public abstract class Person: BaseEntityWithIdentity
     {
         public string FirstName { get; set; }
 
@@ -24,13 +24,9 @@ namespace BankHandWatch.DataAccessLayer.Domains
 
         public string ImagePath { get; set; }
 
-        public int  LocationId { get; set; }
-        [ForeignKey(nameof(LocationId))]
-        public Location Location { get; set; }
-
         public int BranchId { get; set; }
         [ForeignKey(nameof(BranchId))]
-        public Branch Branch { get; set; }
+        public virtual Branch Branch { get; set; }
 
     }
 }

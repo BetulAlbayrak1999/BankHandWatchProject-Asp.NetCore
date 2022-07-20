@@ -10,6 +10,6 @@ namespace BankHandWatch.DataAccessLayer.Domains
     public class Bank: BaseEntityNoIdentity
     {
         public string Name { get; set; }
-        public ICollection<Branch> Branches { get; set; }
+        public virtual ICollection<Branch> Branches { get; set; }
     }
 }

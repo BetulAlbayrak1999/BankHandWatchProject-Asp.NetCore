@@ -13,14 +13,13 @@ namespace BankHandWatch.DataAccessLayer.Domains
         public int BankId { get; set; }
 
         [ForeignKey(nameof(BankId))]
-        public Bank Bank { get; set; }
+        public virtual Bank Bank { get; set; }
 
         public int LocationId { get; set; }
+        public virtual Location Location { get; set; }
 
-        [ForeignKey(nameof(LocationId))]
-        public Location Location { get; set; }
-
-        public ICollection<Person> People { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
 
     }
 }

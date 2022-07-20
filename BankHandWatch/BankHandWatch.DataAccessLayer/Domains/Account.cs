@@ -8,24 +8,16 @@ using System.Threading.Tasks;
 
 namespace BankHandWatch.DataAccessLayer.Domains
 {
-    public class Account: BaseEntityWithIdentity
+    public class Account: BaseEntityNoIdentity
     {
         public string Iban { get; set; }
         public string AccountNo { get; set; }
 
         public int CustomerId { get; set; }
-
-        [ForeignKey(nameof(CustomerId))]
-        public Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
 
         public string AccountType { get; set; }
 
         public int CurrentBalance { get; set; }
-
-
-        public int WatchId { get; set; }
-
-        [ForeignKey(nameof(WatchId))]
-        public Watch Watch { get; set; }
     }
 }

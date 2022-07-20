@@ -11,6 +11,6 @@ namespace BankHandWatch.DataAccessLayer.Domains.SysDomains
     {
         public string Name { get; set; }
 
-        public ICollection<Location> Locations { get; set; }
+        public virtual ICollection<Location> Locations { get; set; }
     }
 }

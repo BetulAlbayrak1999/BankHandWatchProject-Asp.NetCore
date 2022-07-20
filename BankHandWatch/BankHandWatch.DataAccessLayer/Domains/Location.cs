@@ -14,25 +14,19 @@ namespace BankHandWatch.DataAccessLayer.Domains
         public int CityId { get; set; }
 
         [ForeignKey(nameof(CityId))]
-        public City City { get; set; }
+        public virtual City City { get; set; }
 
 
         public int RegionId { get; set; }
         [ForeignKey(nameof(RegionId))]
-        public Region Region { get; set; }
+        public virtual Region Region { get; set; }
 
-
-        public int BranchId { get; set; }
-
-        [ForeignKey(nameof(BranchId))]
-        public Branch Branch { get; set; }
+        public virtual Branch Branch { get; set; }
 
 
         public string Street { get; set; }
 
 
         public string PostalCode { get; set; }
-
-        public ICollection<Person> Persons { get; set; }
     }
 }
